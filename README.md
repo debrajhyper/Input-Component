@@ -1,115 +1,202 @@
-# Input Component Package
+# 🎛️ Input Component
 
-A comprehensive and customizable Input component library for React applications, featuring multiple input types, variations, and states.
+A highly customizable, accessible, and feature-rich React input component library with support for multiple input types, states, and themes.
 
-## Installation
+[![NPM Version](https://img.shields.io/npm/v/input-component.svg)](https://www.npmjs.com/package/input-component)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+## ✨ Features
+
+- 🎨 13 input types: Text, Password, Email, Number, Date, Time, DateTime-Local, Month, Search, URL, Telephone, File, and Textarea
+- 🖌️ 6 customizable variants: Normal, Floating Label, Outlined, Filled, Underlined, Rounded
+- 🚦 8 different states: Default, Hover, Focus, Disabled, Read-Only, Error, Success, Loading
+- 🌓 Dark mode support
+- 🎭 Themeable with CSS variables
+- ♿ Accessibility-friendly
+- 📏 TypeScript support
+- 📁 File input with drag and drop support and file preview
+- 🛠️ Extensive customization options
+
+## 🚀 Installation
 
 ```bash
 npm install input-component
 ```
 
-## Usage
+## 🏁 Quick Start
+
+Wrap your app with the `ThemeProvider`:
 
 ```jsx
-import React from 'react';
-import { TextInput, EmailInput, PasswordInput, ThemeProvider } from 'input-component';
+import { ThemeProvider } from 'input-component';
 
-const MyForm = () => (
-  <ThemeProvider>
-    <form>
-      <TextInput
-        label="Username"
-        placeholder="Enter your username"
-        helpText="Choose a unique username"
-        variant="outlined"
-      />
-      <EmailInput
-        label="Email"
-        placeholder="Enter your email"
-        helpText="We'll never share your email"
-        variant="floating"
-      />
-      <PasswordInput
-        label="Password"
-        placeholder="Enter your password"
-        helpText="Must be at least 8 characters long"
-        variant="filled"
-      />
-    </form>
-  </ThemeProvider>
-);
-
-export default MyForm;
+function App() {
+  return (
+    <ThemeProvider>
+      {/* Your app components */}
+    </ThemeProvider>
+  );
+}
 ```
 
-## Components
+Use the input components in your React components:
 
-- `TextInput`: For basic text input
-- `PasswordInput`: For password input with optional show/hide toggle
-- `EmailInput`: Optimized for email addresses
-- `NumberInput`: For numerical input
-- `DateInput`: Provides a date picker
-- `TimeInput`: Allows time selection
-- `DateTimeInput`: For selecting both date and time
-- `MonthInput`: To select a month
-- `SearchInput`: Optimized for search queries
-- `UrlInput`: For website addresses
-- `TelephoneInput`: For phone numbers
-- `FileInput`: To upload files
-- `TextareaInput`: For multiline text input
+```jsx
+import { TextInput, EmailInput, PasswordInput } from 'input-component';
 
-## Variants
+function MyForm() {
+  return (
+    <form>
+      <TextInput label="Name" placeholder="Enter your name" />
+      <EmailInput 
+        label="Email Address" 
+        placeholder="Enter your email"
+        helpText="We will never share your email."
+        icon={<EmailIcon />}
+        clearable={true}
+        validationMessage="Please enter a valid email."
+        characterLimit={255}
+        prefix="@"
+        suffix=".com"
+        autocomplete="email"
+        variant="floating"
+        inputState="error"
+      />
+      <PasswordInput label="Password" placeholder="Enter your password" />
+    </form>
+  );
+}
+```
 
-- `normal`: Standard input field (default)
-- `floating`: Placeholder transitions to a floating label on focus or input
+## 🧩 Available Components
+
+- `<TextInput />`
+- `<PasswordInput />`
+- `<EmailInput />`
+- `<NumberInput />`
+- `<DateInput />`
+- `<TimeInput />`
+- `<DateTimeInput />`
+- `<MonthInput />`
+- `<SearchInput />`
+- `<UrlInput />`
+- `<TelephoneInput />`
+- `<FileInput />`
+- `<TextareaInput />`
+
+## 🎨 Customization
+
+### Variants
+
+- `normal`: Standard input field
+- `floating`: Placeholder transitions to floating label on focus/input
 - `outlined`: Input with a pronounced border
 - `filled`: Input with a solid background color
-- `underlined`: Input with only a bottom border
+- `underlined`: Minimalist design with only a bottom border
 - `rounded`: Input with rounded corners
 
-## States
-
-- `default`: Standard state
-- `hover`: When the cursor is over the input
-- `focus`: When the input is being edited
-- `disabled`: Input is inactive
-- `readonly`: Content can be read but not changed
-- `error`: Shows validation errors
-- `success`: Indicates correct input
-- `loading`: Indicates processing or validation
-
-## Theming
-
-The package includes a `ThemeProvider` component and a `useTheme` hook for managing light and dark modes.
-
 ```jsx
-import { ThemeProvider, useTheme } from 'input-component';
-
-const App = () => (
-  <ThemeProvider>
-    <MyComponent />
-  </ThemeProvider>
-);
-
-const MyComponent = () => {
-  const { isDarkMode, toggleTheme } = useTheme();
-  return (
-    <div>
-      <button onClick={toggleTheme}>Toggle Theme</button>
-      {/* Your components here */}
-    </div>
-  );
-};
+<TextInput variant="floating" label="Username" />
 ```
 
-## Customization
+### States
 
-You can customize the appearance of the Input components by passing props such as `variant`, `inputState`, and others. Refer to the component prop types for all available options.
+- `default`: Standard state
+- `hover`: Styles applied on hover
+- `focus`: Styles applied when input is focused
+- `disabled`: Input is inactive
+- `readonly`: Content can be read but not edited
+- `error`: Displays validation errors
+- `success`: Indicates correct input
+- `loading`: Shows a loading state
 
-## Accessibility
+```jsx
+<TextInput inputState="error" validationMessage="This field is required" />
+```
 
-This package is built with accessibility in mind, including proper labeling, ARIA attributes, and keyboard navigation support.
+### Additional Features
 
-## License
+- `icon`: Add an icon inside the input
+- `clearable`: Add a clear button to reset input
+- `characterLimit`: Set and display character limit
+- `prefix/suffix`: Add text or icons at the start/end of input
+- `mask`: Format input in a specific pattern
+
+```jsx
+<TextInput 
+  icon={<UserIcon />}
+  clearable={true}
+  characterLimit={50}
+  prefix="$"
+  suffix=".00"
+  mask={(value) => value.replace(/\D/g, '')}
+/>
+```
+
+## 🎭 Theming
+
+Customize the theme by passing a theme object to the ThemeProvider:
+
+```jsx
+import { ThemeProvider, lightTheme } from 'input-component';
+
+const customTheme = {
+  ...lightTheme,
+  colors: {
+    ...lightTheme.colors,
+    primary: '#007bff',
+    secondary: '#6c757d',
+  },
+};
+
+function App() {
+  return (
+    <ThemeProvider initialTheme="light" theme={customTheme}>
+      {/* Your app components */}
+    </ThemeProvider>
+  );
+}
+```
+
+## ♿ Accessibility
+
+- Every input has an associated label
+- Keyboard navigation support
+- ARIA attributes for enhanced screen reader support
+- Clear error identification for users with disabilities
+
+## 🛠️ Development
+
+To start the development server:
+
+```bash
+npm run dev
+```
+
+To build the package:
+
+```bash
+npm run build
+```
+
+## 📄 License
 
 MIT
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## 📚 Documentation
+
+For full documentation and a showcase of all input variations, clone this repository and run:
+
+```bash
+npm run dev
+```
+
+This will start a development server with a showcase page demonstrating all input types, variations, and states.
+
+---
+
+Made with ❤️ by [Debraj Karmakar](https://www.linkedin.com/in/debrajkarmakar010/)

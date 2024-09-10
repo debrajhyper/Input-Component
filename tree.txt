@@ -56,16 +56,8 @@ input-component
     |   package.json
     |   README.md
     |   vite.config.js
-    |            
-    +---public
-    |       vite.svg
     |       
     \---src
-        |   App.css
         |   App.jsx
         |   index.css
         |   main.jsx
-        |   
-        \---assets
-                react.svg
-                
