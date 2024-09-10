@@ -1,0 +1,7 @@
+.textarea {
+    resize: vertical;
+    min-height: 20px;
+    font-family: var(--fonts-body);
+    line-height: 1.2;
+    transition: none;
+}

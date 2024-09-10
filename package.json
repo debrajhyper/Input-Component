@@ -1,0 +1,49 @@
+{
+  "name": "input-component",
+  "version": "1.0.0",
+  "description": "A customizable React Input component with various types and variations, supporting dark mode and theme management.",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rollup -c",
+    "start": "rollup -c -w",
+    "dev": "concurrently \"npm run start\" \"npm run start:test\"",
+    "start:test": "cd test && npm run dev",
+    "clean": "rm -rf dist",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react",
+    "input",
+    "typescript",
+    "components",
+    "form",
+    "dark-mode",
+    "npm-package"
+  ],
+  "author": "Debraj Karmakar",
+  "license": "MIT",
+  "peerDependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^26.0.1",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-typescript": "^11.1.6",
+    "@types/react": "^18.3.5",
+    "@types/react-dom": "^18.3.0",
+    "concurrently": "^9.0.0",
+    "rollup": "^4.21.2",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.2",
+    "tslib": "^2.7.0",
+    "typescript": "^5.5.4",
+    "@tabler/icons-react": "^3.15.0"
+  }
+}

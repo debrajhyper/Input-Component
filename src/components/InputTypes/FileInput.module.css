@@ -1,0 +1,73 @@
+.fileInputWrapper {
+    position: relative;
+    padding: var(--spacing-medium);
+    min-height: var(4 * --spacing-extraLarge);
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--colors-background);
+    color: var(--colors-text);
+    border-radius: var(--borderRadius-medium);
+    border: 1.5px dashed var(--colors-secondary);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.fileInputWrapper.dragging {
+    border-color: var(--colors-primary);
+    background-color: rgba(var(--colors-primary-rgb), 0.1);
+}
+
+.fileInput {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.fileInputLink {
+    color: var(--colors-secondary);
+    text-decoration: underline;
+    margin-left: var(--spacing-extraSmall);
+    cursor: pointer;
+}
+
+.fileList {
+    display: flex;
+    flex-direction: column;
+    margin-top: var(--spacing-extraSmall);
+    gap: var(--spacing-extraSmall);
+    margin-bottom: var(--spacing-medium);
+}
+
+.filePreview {
+    padding: var(--spacing-medium);
+    border: 1.5px solid var(--colors-secondary);
+    border-radius: var(--borderRadius-medium);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: var(--spacing-extraSmall);
+    overflow: hidden;
+}
+
+.trashIcon {
+    cursor: pointer;
+    color: var(--colors-error);
+    opacity: 0.8;
+}
+
+.trashIcon:hover {
+    opacity: 1;
+}
+
+h6,h3, p {
+    margin: 0;
+}

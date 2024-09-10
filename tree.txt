@@ -1,0 +1,71 @@
+input-component
+|   package-lock.json
+|   package.json
+|   README.md
+|   rollup.config.js
+|   tree.txt
+|   tsconfig.json
+|           
++---examples
+|       index.ts
+|       showcase.tsx    
+|           
++---src
+|   |   css-modules.d.ts
+|   |   index.ts
+|   |   
+|   +---components
+|   |   +---Icons
+|   |   |       index.ts
+|   |   |       
+|   |   +---Input
+|   |   |       index.ts
+|   |   |       Input.module.css
+|   |   |       Input.tsx
+|   |   |       
+|   |   \---InputTypes
+|   |           DateInput.tsx
+|   |           DateTimeInput.tsx
+|   |           EmailInput.tsx
+|   |           FileInput.tsx
+|   |           MonthInput.tsx
+|   |           NumberInput.tsx
+|   |           PasswordInput.tsx
+|   |           SearchInput.tsx
+|   |           TelephoneInput.tsx
+|   |           TextareaInput.tsx
+|   |           TextInput.tsx
+|   |           TimeInput.tsx
+|   |           UrlInput.tsx
+|   |           
+|   +---hooks
+|   |       useTheme.ts
+|   |       
+|   +---styles
+|   |       global.css
+|   |       theme.tsx
+|   |       
+|   \---utils
+|           validation.ts
+|           
+\---test
+    |   .gitignore
+    |   eslint.config.js
+    |   index.html
+    |   package-lock.json
+    |   package.json
+    |   README.md
+    |   vite.config.js
+    |            
+    +---public
+    |       vite.svg
+    |       
+    \---src
+        |   App.css
+        |   App.jsx
+        |   index.css
+        |   main.jsx
+        |   
+        \---assets
+                react.svg
+                

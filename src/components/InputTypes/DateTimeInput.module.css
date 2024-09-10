@@ -1,0 +1,23 @@
+.dateTimeInput {
+    position: relative;
+}
+
+.dateTimeInput::-webkit-calendar-picker-indicator {
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.dateTimeInputCalendarIcon {
+    color: var(--colors-text);
+}
+
+/* Adjust the color of the icon for dark mode if needed */
+:global(.darkMode) .dateTimeInputCalendarIcon {
+    color: var(--colors-text);
+}
