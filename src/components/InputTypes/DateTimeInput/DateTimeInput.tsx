@@ -1,10 +1,20 @@
 import React from 'react';
-import { Input, InputProps } from '../Input';
 import styles from './DateTimeInput.module.css';
+import { Input, InputProps } from '../../Input';
 import { IconCalendarStats } from '@tabler/icons-react';
 
 export interface DateTimeInputProps extends Omit<InputProps, 'type'> { }
 
+/**
+ * DateTimeInput component
+ *
+ * @remarks
+ * This component wraps the standard Input component and
+ * sets the type to 'datetime-local'. It also adds a calendar
+ * icon suffix.
+ *
+ * @param props - The props for the Input component
+ */
 export const DateTimeInput: React.FC<DateTimeInputProps> = (props) => {
     return (
         <Input
@@ -18,4 +28,7 @@ export const DateTimeInput: React.FC<DateTimeInputProps> = (props) => {
     );
 };
 
+/**
+ * Default export
+ */
 export default DateTimeInput;

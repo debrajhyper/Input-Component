@@ -1,1 +1,2 @@
-export { Input, InputProps } from './Input';
+export { Input } from './Input';
+export { InputProps } from './types';

@@ -1,4 +1,4 @@
-input-component
+rc-input-component
 |   package-lock.json
 |   package.json
 |   README.md

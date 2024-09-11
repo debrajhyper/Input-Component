@@ -1,19 +1,32 @@
 import React, { useState } from 'react';
-import { Input, InputProps } from '../Input';
-import { IconEye, IconEyeOff } from '@tabler/icons-react';
 import { useTheme } from 'hooks/useTheme';
+import { Input, InputProps } from '../../Input';
+import { IconEye, IconEyeOff } from '@tabler/icons-react';
+
 export interface PasswordInputProps extends Omit<InputProps, 'type'> {
     showPasswordToggle?: boolean;
 }
 
+/**
+ * PasswordInput component
+ *
+ * @param {PasswordInputProps} props
+ * @returns
+ */
 export const PasswordInput: React.FC<PasswordInputProps> = ({ showPasswordToggle = true, ...props }) => {
     const { theme } = useTheme();
     const [showPassword, setShowPassword] = useState(false);
 
+    /**
+     * Toggle button to show/hide password
+     */
     const togglePasswordVisibility = () => {
         setShowPassword(!showPassword);
     };
 
+    /**
+     * Password toggle button
+     */
     const passwordToggleButton = (
         <button
             type="button"
@@ -30,7 +43,7 @@ export const PasswordInput: React.FC<PasswordInputProps> = ({ showPasswordToggle
                 justifyContent: 'center'
             }}
         >
-            {showPassword ? <IconEye color={theme.colors.text} /> : <IconEyeOff color={theme.colors.text}/>}
+            {showPassword ? <IconEye color={theme.colors.text} /> : <IconEyeOff color={theme.colors.text} />}
         </button>
     );
 

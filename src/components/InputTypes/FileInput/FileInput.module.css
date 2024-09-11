@@ -1,3 +1,7 @@
+.fileInputContainer {
+    width: 100%;
+}
+
 .fileInputWrapper {
     position: relative;
     padding: var(--spacing-medium);
@@ -56,6 +60,29 @@
     align-items: start;
     gap: var(--spacing-extraSmall);
     overflow: hidden;
+    font-size: .8rem;
+    color: var(--colors-text);
+    background-color: var(--colors-background);
+}
+
+.filePreview b {
+    font-weight: 600;
+    color: var(--colors-primary);
+}
+
+.filePreview h3,
+.filePreview p {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-weight: lighter;
+}
+
+.removeFile {
+    display: flex;
+    align-items: center;
 }
 
 .trashIcon {
@@ -66,8 +93,4 @@
 
 .trashIcon:hover {
     opacity: 1;
-}
-
-h6,h3, p {
-    margin: 0;
 }

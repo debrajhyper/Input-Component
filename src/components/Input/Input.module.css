@@ -14,7 +14,6 @@
     transition: all 0.3s ease;
     background-color: transparent;
     color: var(--colors-text);
-    /* z-index: 100; */
 }
 
 .input.hasPrefix {
@@ -23,6 +22,28 @@
 
 .input.hasSuffix {
     padding-right: calc(var(--spacing-medium) * 2 + 20px);
+}
+
+.prefixContainer,
+.suffixContainer {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-extraSmall);
+    min-width: min-content;
+    overflow: hidden;
+}
+
+.prefixContainer {
+    max-width: calc(var(--spacing-medium) * 2 + 12px);
+    left: var(--spacing-medium);
+}
+
+.suffixContainer {
+    max-width: calc(var(--spacing-medium) * 2 + 32px);
+    right: var(--spacing-medium);
 }
 
 .textarea {
@@ -58,7 +79,7 @@
 
 .inputWrapper:focus-within .floatingLabel,
 .inputWrapper:has(.input.hasValue) .floatingLabel {
-    transform: translateY(-160%) translateX(-10%) scale(0.9);
+    transform: translateY(-140%) translateX(-10%) scale(0.9);
     background-color: var(--colors-background);
     color: var(--colors-primary);
     padding: 0 var(--spacing-extraSmall);
@@ -74,10 +95,9 @@
 .icon,
 .prefix,
 .suffix {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
     color: var(--colors-secondary);
+    display: flex;
+    align-items: center;
 }
 
 .icon {
@@ -93,15 +113,15 @@
 }
 
 .clearButton {
-    position: absolute;
-    right: var(--spacing-medium);
-    top: 50%;
-    transform: translateY(-50%);
     background: none;
     border: none;
     cursor: pointer;
     font-size: var(--fontSizes-large);
     color: var(--colors-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
 }
 
 .helpText,
@@ -126,9 +146,6 @@
 /* Variants */
 .normal {}
 
-/* .floating {
-    position: relative;
-} */
 
 .outlined {
     border-width: 2px;
@@ -205,6 +222,10 @@
 
 .loading {
     cursor: wait;
+}
+
+.loading .suffixContainer {
+    display: none;
 }
 
 .loadingSpinner {

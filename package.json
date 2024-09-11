@@ -1,11 +1,12 @@
 {
-  "name": "input-component",
+  "name": "rc-input-component",
   "version": "1.0.0",
   "description": "A customizable React Input component with various types and variations, supporting dark mode and theme management.",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
   "type": "module",
+  "access": "public",
   "files": [
     "dist"
   ],
@@ -17,6 +18,11 @@
     "clean": "rm -rf dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/debrajhyper/Rc-Input-Component"
+  },
+  "homepage": "https://rc-input-component.vercel.app",
   "keywords": [
     "react",
     "input",

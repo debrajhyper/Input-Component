@@ -1,8 +1,8 @@
-# 🎛️ Input Component
+# ![](./template/logo32.png) Rc Input Component
 
 A highly customizable, accessible, and feature-rich React input component library with support for multiple input types, states, and themes.
 
-[![NPM Version](https://img.shields.io/npm/v/input-component.svg)](https://www.npmjs.com/package/input-component)
+[![NPM Version](https://img.shields.io/npm/v/rc-input-component.svg)](https://www.npmjs.com/package/rc-input-component)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## ✨ Features
@@ -20,7 +20,7 @@ A highly customizable, accessible, and feature-rich React input component librar
 ## 🚀 Installation
 
 ```bash
-npm install input-component
+npm install rc-input-component
 ```
 
 ## 🏁 Quick Start
@@ -28,7 +28,7 @@ npm install input-component
 Wrap your app with the `ThemeProvider`:
 
 ```jsx
-import { ThemeProvider } from 'input-component';
+import { ThemeProvider } from 'rc-input-component';
 
 function App() {
   return (
@@ -42,7 +42,7 @@ function App() {
 Use the input components in your React components:
 
 ```jsx
-import { TextInput, EmailInput, PasswordInput } from 'input-component';
+import { TextInput, EmailInput, PasswordInput } from 'rc-input-component';
 
 function MyForm() {
   return (
@@ -133,12 +133,278 @@ function MyForm() {
 />
 ```
 
+## 🔧 Props
+
+The Input Component accepts the following props:
+
+| Prop Name | Type | Default | Description |
+|-----------|------|---------|-------------|
+| label | React.ReactNode | undefined | Label for the input field |
+| helpText | React.ReactNode | undefined | Additional help text displayed below the input |
+| icon | React.ReactNode | undefined | Icon to display inside the input |
+| clearable | boolean | false | Whether to show a clear button |
+| validationMessage | React.ReactNode | undefined | Validation or error message |
+| characterLimit | number | undefined | Maximum number of characters allowed |
+| prefix | React.ReactNode | undefined | Content to display before the input |
+| suffix | React.ReactNode | undefined | Content to display after the input |
+| variant | 'normal' \| 'floating' \| 'outlined' \| 'filled' \| 'underlined' \| 'rounded' | 'normal' | Visual variant of the input |
+| inputState | 'default' \| 'hover' \| 'focus' \| 'disabled' \| 'readonly' \| 'error' \| 'success' \| 'loading' | 'default' | Current state of the input |
+| onValidate | (value: string) => string \| null | undefined | Custom validation function |
+| mask | (value: string) => string | undefined | Function to mask/format the input value |
+| wrapperStyle | React.CSSProperties | undefined | Custom styles for the wrapper element |
+| inputStyle | React.CSSProperties | undefined | Custom styles for the input element |
+| labelStyle | React.CSSProperties | undefined | Custom styles for the label |
+| helpTextStyle | React.CSSProperties | undefined | Custom styles for the help text |
+| validationMessageStyle | React.CSSProperties | undefined | Custom styles for the validation message |
+| characterCountStyle | React.CSSProperties | undefined | Custom styles for the character count |
+| prefixStyle | React.CSSProperties | undefined | Custom styles for the prefix |
+| suffixStyle | React.CSSProperties | undefined | Custom styles for the suffix |
+| customClasses | object | {} | Custom CSS classes for various parts of the component |
+
+Additionally, the Input Component accepts all standard HTML input attributes.
+
+## 🔧 Props for Each Input Component
+
+Below are tables listing the props for each individual input component. Note that all components also accept standard HTML attributes corresponding to their input types.
+
+### TextInput
+
+| Prop Name | Type | Default | Description |
+|-----------|------|---------|-------------|
+| label | React.ReactNode | undefined | Label for the input field |
+| helpText | React.ReactNode | undefined | Additional help text displayed below the input |
+| icon | React.ReactNode | undefined | Icon to display inside the input |
+| clearable | boolean | false | Whether to show a clear button |
+| validationMessage | React.ReactNode | undefined | Validation or error message |
+| characterLimit | number | undefined | Maximum number of characters allowed |
+| prefix | React.ReactNode | undefined | Content to display before the input |
+| suffix | React.ReactNode | undefined | Content to display after the input |
+| variant | 'normal' \| 'floating' \| 'outlined' \| 'filled' \| 'underlined' \| 'rounded' | 'normal' | Visual variant of the input |
+| inputState | 'default' \| 'hover' \| 'focus' \| 'disabled' \| 'readonly' \| 'error' \| 'success' \| 'loading' | 'default' | Current state of the input |
+| onValidate | (value: string) => string \| null | undefined | Custom validation function |
+| mask | (value: string) => string | undefined | Function to mask/format the input value |
+
+### PasswordInput
+
+| Prop Name | Type | Default | Description |
+|-----------|------|---------|-------------|
+| label | React.ReactNode | undefined | Label for the input field |
+| helpText | React.ReactNode | undefined | Additional help text displayed below the input |
+| icon | React.ReactNode | undefined | Icon to display inside the input |
+| clearable | boolean | false | Whether to show a clear button |
+| validationMessage | React.ReactNode | undefined | Validation or error message |
+| characterLimit | number | undefined | Maximum number of characters allowed |
+| prefix | React.ReactNode | undefined | Content to display before the input |
+| suffix | React.ReactNode | undefined | Content to display after the input |
+| variant | 'normal' \| 'floating' \| 'outlined' \| 'filled' \| 'underlined' \| 'rounded' | 'normal' | Visual variant of the input |
+| inputState | 'default' \| 'hover' \| 'focus' \| 'disabled' \| 'readonly' \| 'error' \| 'success' \| 'loading' | 'default' | Current state of the input |
+| onValidate | (value: string) => string \| null | undefined | Custom validation function |
+| mask | (value: string) => string | undefined | Function to mask/format the input value |
+| showPasswordToggle | boolean | true | Whether to show the password toggle button |
+
+### EmailInput
+
+| Prop Name | Type | Default | Description |
+|-----------|------|---------|-------------|
+| label | React.ReactNode | undefined | Label for the input field |
+| helpText | React.ReactNode | undefined | Additional help text displayed below the input |
+| icon | React.ReactNode | undefined | Icon to display inside the input |
+| clearable | boolean | false | Whether to show a clear button |
+| validationMessage | React.ReactNode | undefined | Validation or error message |
+| characterLimit | number | undefined | Maximum number of characters allowed |
+| prefix | React.ReactNode | undefined | Content to display before the input |
+| suffix | React.ReactNode | undefined | Content to display after the input |
+| variant | 'normal' \| 'floating' \| 'outlined' \| 'filled' \| 'underlined' \| 'rounded' | 'normal' | Visual variant of the input |
+| inputState | 'default' \| 'hover' \| 'focus' \| 'disabled' \| 'readonly' \| 'error' \| 'success' \| 'loading' | 'default' | Current state of the input |
+| onValidate | (value: string) => string \| null | undefined | Custom validation function |
+| mask | (value: string) => string | undefined | Function to mask/format the input value |
+
+### NumberInput
+
+| Prop Name | Type | Default | Description |
+|-----------|------|---------|-------------|
+| label | React.ReactNode | undefined | Label for the input field |
+| helpText | React.ReactNode | undefined | Additional help text displayed below the input |
+| icon | React.ReactNode | undefined | Icon to display inside the input |
+| clearable | boolean | false | Whether to show a clear button |
+| validationMessage | React.ReactNode | undefined | Validation or error message |
+| characterLimit | number | undefined | Maximum number of characters allowed |
+| prefix | React.ReactNode | undefined | Content to display before the input |
+| suffix | React.ReactNode | undefined | Content to display after the input |
+| variant | 'normal' \| 'floating' \| 'outlined' \| 'filled' \| 'underlined' \| 'rounded' | 'normal' | Visual variant of the input |
+| inputState | 'default' \| 'hover' \| 'focus' \| 'disabled' \| 'readonly' \| 'error' \| 'success' \| 'loading' | 'default' | Current state of the input |
+| onValidate | (value: string) => string \| null | undefined | Custom validation function |
+| mask | (value: string) => string | undefined | Function to mask/format the input value |
+| min | number | undefined | The minimum value allowed |
+| max | number | undefined | The maximum value allowed |
+| step | number | undefined | The step value for the number input |
+
+### DateInput
+
+| Prop Name | Type | Default | Description |
+|-----------|------|---------|-------------|
+| label | React.ReactNode | undefined | Label for the input field |
+| helpText | React.ReactNode | undefined | Additional help text displayed below the input |
+| icon | React.ReactNode | undefined | Icon to display inside the input |
+| clearable | boolean | false | Whether to show a clear button |
+| validationMessage | React.ReactNode | undefined | Validation or error message |
+| variant | 'normal' \| 'floating' \| 'outlined' \| 'filled' \| 'underlined' \| 'rounded' | 'normal' | Visual variant of the input |
+| inputState | 'default' \| 'hover' \| 'focus' \| 'disabled' \| 'readonly' \| 'error' \| 'success' \| 'loading' | 'default' | Current state of the input |
+| onValidate | (value: string) => string \| null | undefined | Custom validation function |
+| min | string | undefined | The minimum date allowed |
+| max | string | undefined | The maximum date allowed |
+
+### TimeInput
+
+| Prop Name | Type | Default | Description |
+|-----------|------|---------|-------------|
+| label | React.ReactNode | undefined | Label for the input field |
+| helpText | React.ReactNode | undefined | Additional help text displayed below the input |
+| icon | React.ReactNode | undefined | Icon to display inside the input |
+| clearable | boolean | false | Whether to show a clear button |
+| validationMessage | React.ReactNode | undefined | Validation or error message |
+| variant | 'normal' \| 'floating' \| 'outlined' \| 'filled' \| 'underlined' \| 'rounded' | 'normal' | Visual variant of the input |
+| inputState | 'default' \| 'hover' \| 'focus' \| 'disabled' \| 'readonly' \| 'error' \| 'success' \| 'loading' | 'default' | Current state of the input |
+| onValidate | (value: string) => string \| null | undefined | Custom validation function |
+| step | number | undefined | The step value for the time input (in seconds) |
+
+### DateTimeInput
+
+| Prop Name | Type | Default | Description |
+|-----------|------|---------|-------------|
+| label | React.ReactNode | undefined | Label for the input field |
+| helpText | React.ReactNode | undefined | Additional help text displayed below the input |
+| icon | React.ReactNode | undefined | Icon to display inside the input |
+| clearable | boolean | false | Whether to show a clear button |
+| validationMessage | React.ReactNode | undefined | Validation or error message |
+| variant | 'normal' \| 'floating' \| 'outlined' \| 'filled' \| 'underlined' \| 'rounded' | 'normal' | Visual variant of the input |
+| inputState | 'default' \| 'hover' \| 'focus' \| 'disabled' \| 'readonly' \| 'error' \| 'success' \| 'loading' | 'default' | Current state of the input |
+| onValidate | (value: string) => string \| null | undefined | Custom validation function |
+| min | string | undefined | The minimum date and time allowed |
+| max | string | undefined | The maximum date and time allowed |
+| step | number | undefined | The step value for the time part (in seconds) |
+
+### MonthInput
+
+| Prop Name | Type | Default | Description |
+|-----------|------|---------|-------------|
+| label | React.ReactNode | undefined | Label for the input field |
+| helpText | React.ReactNode | undefined | Additional help text displayed below the input |
+| icon | React.ReactNode | undefined | Icon to display inside the input |
+| clearable | boolean | false | Whether to show a clear button |
+| validationMessage | React.ReactNode | undefined | Validation or error message |
+| variant | 'normal' \| 'floating' \| 'outlined' \| 'filled' \| 'underlined' \| 'rounded' | 'normal' | Visual variant of the input |
+| inputState | 'default' \| 'hover' \| 'focus' \| 'disabled' \| 'readonly' \| 'error' \| 'success' \| 'loading' | 'default' | Current state of the input |
+| onValidate | (value: string) => string \| null | undefined | Custom validation function |
+| min | string | undefined | The minimum month allowed |
+| max | string | undefined | The maximum month allowed |
+
+### SearchInput
+
+| Prop Name | Type | Default | Description |
+|-----------|------|---------|-------------|
+| label | React.ReactNode | undefined | Label for the input field |
+| helpText | React.ReactNode | undefined | Additional help text displayed below the input |
+| icon | React.ReactNode | undefined | Icon to display inside the input |
+| clearable | boolean | false | Whether to show a clear button |
+| validationMessage | React.ReactNode | undefined | Validation or error message |
+| characterLimit | number | undefined | Maximum number of characters allowed |
+| prefix | React.ReactNode | undefined | Content to display before the input |
+| suffix | React.ReactNode | undefined | Content to display after the input |
+| variant | 'normal' \| 'floating' \| 'outlined' \| 'filled' \| 'underlined' \| 'rounded' | 'normal' | Visual variant of the input |
+| inputState | 'default' \| 'hover' \| 'focus' \| 'disabled' \| 'readonly' \| 'error' \| 'success' \| 'loading' | 'default' | Current state of the input |
+| onValidate | (value: string) => string \| null | undefined | Custom validation function |
+| mask | (value: string) => string | undefined | Function to mask/format the input value |
+| showSearchIcon | boolean | true | Whether to show the search icon |
+
+### UrlInput
+
+| Prop Name | Type | Default | Description |
+|-----------|------|---------|-------------|
+| label | React.ReactNode | undefined | Label for the input field |
+| helpText | React.ReactNode | undefined | Additional help text displayed below the input |
+| icon | React.ReactNode | undefined | Icon to display inside the input |
+| clearable | boolean | false | Whether to show a clear button |
+| validationMessage | React.ReactNode | undefined | Validation or error message |
+| characterLimit | number | undefined | Maximum number of characters allowed |
+| prefix | React.ReactNode | undefined | Content to display before the input |
+| suffix | React.ReactNode | undefined | Content to display after the input |
+| variant | 'normal' \| 'floating' \| 'outlined' \| 'filled' \| 'underlined' \| 'rounded' | 'normal' | Visual variant of the input |
+| inputState | 'default' \| 'hover' \| 'focus' \| 'disabled' \| 'readonly' \| 'error' \| 'success' \| 'loading' | 'default' | Current state of the input |
+| onValidate | (value: string) => string \| null | undefined | Custom validation function |
+| mask | (value: string) => string | undefined | Function to mask/format the input value |
+
+### TelephoneInput
+
+| Prop Name | Type | Default | Description |
+|-----------|------|---------|-------------|
+| label | React.ReactNode | undefined | Label for the input field |
+| helpText | React.ReactNode | undefined | Additional help text displayed below the input |
+| icon | React.ReactNode | undefined | Icon to display inside the input |
+| clearable | boolean | false | Whether to show a clear button |
+| validationMessage | React.ReactNode | undefined | Validation or error message |
+| characterLimit | number | undefined | Maximum number of characters allowed |
+| prefix | React.ReactNode | undefined | Content to display before the input |
+| suffix | React.ReactNode | undefined | Content to display after the input |
+| variant | 'normal' \| 'floating' \| 'outlined' \| 'filled' \| 'underlined' \| 'rounded' | 'normal' | Visual variant of the input |
+| inputState | 'default' \| 'hover' \| 'focus' \| 'disabled' \| 'readonly' \| 'error' \| 'success' \| 'loading' | 'default' | Current state of the input |
+| onValidate | (value: string) => string \| null | undefined | Custom validation function |
+| mask | (value: string) => string | undefined | Function to mask/format the input value |
+
+### FileInput
+
+| Prop Name | Type | Default | Description |
+|-----------|------|---------|-------------|
+| label | React.ReactNode | undefined | Label for the input field |
+| helpText | React.ReactNode | undefined | Additional help text displayed below the input |
+| validationMessage | React.ReactNode | undefined | Validation or error message |
+| variant | 'normal' \| 'floating' \| 'outlined' \| 'filled' \| 'underlined' \| 'rounded' | 'normal' | Visual variant of the input |
+| inputState | 'default' \| 'hover' \| 'focus' \| 'disabled' \| 'readonly' \| 'error' \| 'success' \| 'loading' | 'default' | Current state of the input |
+| onValidate | (value: string) => string \| null | undefined | Custom validation function |
+| accept | string | undefined | File types to accept |
+| multiple | boolean | false | Whether to allow multiple file selection |
+| preview | boolean | false | Whether to show file preview |
+| fileUploadText | React.ReactNode | undefined | Text to display for file upload |
+
+### TextareaInput
+
+| Prop Name | Type | Default | Description |
+|-----------|------|---------|-------------|
+| label | React.ReactNode | undefined | Label for the input field |
+| helpText | React.ReactNode | undefined | Additional help text displayed below the input |
+| validationMessage | React.ReactNode | undefined | Validation or error message |
+| characterLimit | number | undefined | Maximum number of characters allowed |
+| variant | 'normal' \| 'floating' \| 'outlined' \| 'filled' \
+
+### Usage Example
+
+```jsx
+<Input
+  label="Username"
+  helpText="Enter your username or email"
+  icon={<UserIcon />}
+  clearable={true}
+  validationMessage="Username is required"
+  characterLimit={50}
+  prefix="@"
+  suffix=".com"
+  variant="outlined"
+  inputState="default"
+  onValidate={(value) => value.length < 3 ? "Username too short" : null}
+  mask={(value) => value.toLowerCase()}
+  wrapperStyle={{ marginBottom: '20px' }}
+  inputStyle={{ fontWeight: 'bold' }}
+/>
+```
+
+This example demonstrates many of the available props. Adjust as needed for your specific use case.
+
 ## 🎭 Theming
 
 Customize the theme by passing a theme object to the ThemeProvider:
 
 ```jsx
-import { ThemeProvider, lightTheme } from 'input-component';
+import { ThemeProvider, lightTheme } from 'rc-input-component';
 
 const customTheme = {
   ...lightTheme,
